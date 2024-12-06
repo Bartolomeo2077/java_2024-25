@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="jakarta.faces.facelets"
+      xmlns:h="jakarta.faces.html"
+      xmlns:f="jakarta.faces.core">
+
+<ui:composition template="layout.xhtml">
+    <ui:define name="content">
+        <p:panel header="User Management" style="margin: 1em;">
+            <h:form id="usersForm">
+                <h:panelGrid columns="2" cellpadding="5">
+                    <h:outputLabel value="Search Username:" />
+                    <p:inputText value="#{userList.username}" placeholder="Enter username" />
+                    <p:commandButton value="Search" update="usersTable" />
+                </h:panelGrid>
+
+                <p:dataTable id="usersTable" value="#{userList.list}" var="user" paginator="true" rows="10" style="margin-top: 1em;">
+                    <p:column headerText="Email">
+                        <h:outputText value="#{user.email}" />
+                    </p:column>
+                    <p:column headerText="Username">
+                        <h:outputText value="#{user.username}" />
+                    </p:column>
+                </p:dataTable>
+            </h:form>
+        </p:panel>
+    </ui:define>
+</ui:composition>
+
+</html>

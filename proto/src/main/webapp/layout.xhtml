@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="jakarta.faces.facelets"
+      xmlns:h="jakarta.faces.html"
+      xmlns:f="jakarta.faces.core">
+
+    <h:head>
+        <title>Book Rental Management</title>
+        <meta charset="UTF-8" />
+        <style>
+            .navbar {
+                display: flex;
+                justify-content: space-around;
+                background-color: #333;
+                padding: 1em;
+            }
+            .navbar a {
+                color: white;
+                text-decoration: none;
+                padding: 0.5em 1em;
+            }
+            .navbar a:hover {
+                background-color: #555;
+            }
+        </style>
+    </h:head>
+    <h:body style="background-color: #eee; margin: 0; padding: 0;">
+        <div class="navbar">
+            <a href="users.xhtml">Users</a>
+            <a href="books.xhtml">Books</a>
+            <a href="orders.xhtml">Orders</a>
+            <a href="index.xhtml">Home</a>
+        </div>
+        <ui:insert name="content" />
+    </h:body>
+</html>
